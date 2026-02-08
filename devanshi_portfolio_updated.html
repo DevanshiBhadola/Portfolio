@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devanshi Bhadola | Healthcare Data Analyst & Epidemiologist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0369a1;
+            --primary-light: #0ea5e9;
+            --secondary: #059669;
+            --accent: #dc2626;
+            --dark: #0f172a;
+            --dark-blue: #1e293b;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--gray-50);
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 80px 0 60px;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+        }
+
+        .profile-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .header-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+            font-family: 'Merriweather', serif;
+        }
+
+        .header-subtitle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .header-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            text-align: justify;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .meta-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .meta-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Impact Statistics */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 48px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 40px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .stat-detail {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--dark);
+            font-family: 'Merriweather', serif;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            max-width: 700px;
+            text-align: justify;
+        }
+
+        /* About Section */
+        .about-content {
+            background: white;
+            padding: 48px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .about-text {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        .expertise-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .expertise-card {
+            padding: 24px;
+            background: var(--gray-50);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .expertise-card h3 {
+            font-size: 1.125rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .expertise-card p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Project Cards */
+        .project-showcase {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 48px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 40px 48px;
+        }
+
+        .project-header h3 {
+            font-size: 1.875rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 24px;
+            font-size: 0.9375rem;
+            opacity: 0.95;
+            flex-wrap: wrap;
+        }
+
+        .project-body {
+            padding: 48px;
+        }
+
+        .project-overview {
+            margin-bottom: 32px;
+        }
+
+        .project-overview h4 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .project-overview p {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .project-highlights {
+            background: var(--gray-50);
+            padding: 32px;
+            border-radius: 8px;
+            margin: 32px 0;
+        }
+
+        .project-highlights h4 {
+            font-size: 1.125rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .project-highlights ul {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .project-highlights li {
+            padding-left: 28px;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .project-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .tech-stack {
+            margin-top: 32px;
+            padding: 24px;
+            background: var(--gray-50);
+            border-radius: 8px;
+        }
+
+        .tech-stack h5 {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tech-tag {
+            padding: 6px 14px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* Dashboard Gallery */
+        .dashboard-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .dashboard-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .dashboard-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .dashboard-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dashboard-caption {
+            padding: 24px;
+        }
+
+        .dashboard-caption h4 {
+            font-size: 1.125rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .dashboard-caption p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Experience */
+        .experience-list {
+            display: grid;
+            gap: 32px;
+        }
+
+        .experience-item {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .experience-item h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .experience-role {
+            font-size: 1.125rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .experience-date {
+            font-family: 'IBM Plex Mono', monospace;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 20px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+        }
+
+        .experience-item li {
+            padding: 6px 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 24px;
+            line-height: 1.7;
+            font-size: 0.9375rem;
+            text-align: justify;
+        }
+
+        .experience-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Publications */
+        .publications-list {
+            display: grid;
+            gap: 24px;
+        }
+
+        .publication-item {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+        }
+
+        .publication-item h4 {
+            font-size: 1.125rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .publication-authors {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .publication-venue {
+            font-size: 0.9375rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: 48px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            font-size: 0.9375rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-photo img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .header-title {
+                font-size: 2.5rem;
+            }
+
+            .header-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .project-body, .about-content {
+                padding: 32px 24px;
+            }
+
+            nav ul {
+                gap: 24px;
+                padding: 16px 20px;
+            }
+
+            .impact-stats {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                padding: 0 20px;
+            }
+
+            .dashboard-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="profile-photo">
+                <img src="./profile_pic.jpg" alt="Devanshi Bhadola">
+            </div>
+            <div class="header-info">
+                <h1 class="header-title">Devanshi Bhadola</h1>
+                <div class="header-subtitle">Healthcare Data Analyst & Epidemiologist</div>
+                <p class="header-description">
+                    Experienced healthcare data analytics professional specialized in public health and epidemiology with 5+ years applying statistical modeling, data visualization, and epidemiologic research methods to improve healthcare delivery and community health outcomes. Skilled in transforming complex health data into actionable insights that drive evidence-based decision-making and advance health equity initiatives.
+                </p>
+                <div class="header-meta">
+                    <div class="meta-item">
+                        📧 <a href="mailto:devanshi.bhadola1@gmail.com">devanshi.bhadola1@gmail.com</a>
+                    </div>
+                    <div class="meta-item">
+                        🔗 <a href="https://www.linkedin.com/in/devanshi-bhadola-78308b102/" target="_blank">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Impact Statistics -->
+    <div class="impact-stats">
+        <div class="stat-card">
+            <div class="stat-value">60K+</div>
+            <div class="stat-label">Patient Records Analyzed</div>
+            <div class="stat-detail">Perinatal mental health studies</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">$400K+</div>
+            <div class="stat-label">Funding Raised</div>
+            <div class="stat-detail">Community health campaigns</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">50%</div>
+            <div class="stat-label">Efficiency Improvement</div>
+            <div class="stat-detail">Automated reporting systems</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">100K+</div>
+            <div class="stat-label">Global Records</div>
+            <div class="stat-detail">Infectious disease datasets</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">5+</div>
+            <div class="stat-label">Publications</div>
+            <div class="stat-detail">Conference presentations</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Research Projects</a></li>
+            <li><a href="#visualizations">Data Visualizations</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#publications">Publications</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <p class="section-subtitle">Transforming healthcare data into actionable insights for public health impact</p>
+            
+            <div class="about-content">
+                <p class="about-text">
+                    I am a committed public health professional with a robust foundation in data analysis and epidemiology. I earned my Master of Public Health with a concentration in Epidemiology from the University of Illinois at Urbana-Champaign with a perfect 4.0 GPA. Additionally, I hold a Bachelor's in Pharmacy and Master's in Business Administration from Narsee Monjee Institute of Management Studies (NMIMS).
+                </p>
+                <p class="about-text">
+                    My background includes managing data systems, performing in-depth analyses, and leading initiatives to enhance community health outcomes. I am passionate about harnessing data to generate actionable insights in healthcare analytics, with particular expertise in maternal mental health, infectious disease epidemiology, and health equity research.
+                </p>
+                <p class="about-text">
+                    I excel at translating complex datasets into evidence-based recommendations that improve clinical practices, inform public health policy, and drive strategic decision-making. My experience spans statistical modeling, predictive analytics, program evaluation, and development of data visualization dashboards for diverse stakeholders including hospitals, research institutions, and community organizations.
+                </p>
+
+                <div class="expertise-areas">
+                    <div class="expertise-card">
+                        <h3>Public Health Analytics</h3>
+                        <p>Specialized in perinatal mental health, maternal-child health outcomes, and community health needs assessments using advanced statistical modeling</p>
+                    </div>
+                    <div class="expertise-card">
+                        <h3>Epidemiologic Research</h3>
+                        <p>Extensive experience in infectious disease surveillance, predictive modeling, and spatial analysis of health disparities across diverse populations</p>
+                    </div>
+                    <div class="expertise-card">
+                        <h3>Healthcare Operations</h3>
+                        <p>Expertise in hospital resource utilization, length of stay optimization, workforce retention analysis, and quality improvement initiatives</p>
+                    </div>
+                    <div class="expertise-card">
+                        <h3>Data-Driven Strategy</h3>
+                        <p>Proven track record building integrated data systems, automated reporting pipelines, and Tableau dashboards that guide organizational decisions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Research Projects</h2>
+            <p class="section-subtitle">Evidence-based analytics driving improvements in healthcare delivery and public health</p>
+
+            <!-- Project 1: Mental Health Screening -->
+            <div class="project-showcase">
+                <div class="project-header">
+                    <h3>Perinatal Mental Health Screening Trends in Latina Populations</h3>
+                    <div class="project-meta">
+                        <span>University of Illinois at Urbana-Champaign</span>
+                        <span>•</span>
+                        <span>February 2023 - October 2024</span>
+                        <span>•</span>
+                        <span>3 Conference Presentations</span>
+                    </div>
+                </div>
+                
+                <div class="project-body">
+                    <div class="project-overview">
+                        <h4>Clinical Depression and Anxiety in Perinatal Women</h4>
+                        <p>
+                            Spearheaded groundbreaking secondary clinical data analysis uncovering nuanced insights into the prevalence of anxiety and depression among perinatal women. Analyzed 60,000+ perinatal patient records to assess pre- and post-COVID-19 trends in mental health screenings among Latina women.
+                        </p>
+                        <p>
+                            Built analytical pipelines with logic-based coding and regression modeling, improving accuracy of screening outcome identification by over 20% through recoding and verification of screening thresholds.
+                        </p>
+                    </div>
+
+                    <div class="project-highlights">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Streamlined and managed 60,000+ patient records using R, performing descriptive, comparative, and multivariate analyses</li>
+                            <li>Conducted logistic regression and multivariate analyses using R and SAS to evaluate screening disparities by demographic factors</li>
+                            <li>Identified temporal and demographic trends in depression and anxiety screenings pre- and post-pandemic</li>
+                            <li>Produced statistical tables and visual summaries used for strategic planning on perinatal mental health services</li>
+                            <li>Presented findings at 3 national and international conferences</li>
+                            <li>Co-authored 2 peer-reviewed publications influencing clinical approaches to maternal mental health</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-highlights">
+                        <h4>Gestational Diabetes Management Study</h4>
+                        <ul>
+                            <li>Analyzed data from 99 racially, ethnically, and linguistically diverse women across urban vs. rural hospitals</li>
+                            <li>Recoded and streamlined datasets with 300+ demographic, behavioral, and clinical variables using SPSS</li>
+                            <li>Applied t-tests, chi-squared tests, and multivariate regression to identify predictors of diabetes self-efficacy</li>
+                            <li>Detected significant site-based differences in exercise self-efficacy (p < .05) and provider recommendations (p < .001)</li>
+                            <li>Revealed disparities linked to care models and resource allocation between hospital settings</li>
+                            <li>Presented findings at 2024 International Marce Society Conference with recommendations to standardize care</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-highlights">
+                        <h4>Postpartum Stress, Emotions, and Pain Study</h4>
+                        <ul>
+                            <li>Conducted in-depth interviews with 20 postpartum individuals using mixed-methods approach</li>
+                            <li>Coded and synthesized over 20 hours of qualitative interview data using thematic analysis</li>
+                            <li>Identified key psychosocial and behavioral themes to inform maternal mental health interventions</li>
+                            <li>Improved screening efficiency by 70% through refined eligibility criteria and recruitment processes</li>
+                            <li>Findings disseminated at APA Conference 2024 and Marce of North America Conference 2023</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h5>Technologies & Tools</h5>
+                        <div class="tech-tags">
+                            <span class="tech-tag">RStudio</span>
+                            <span class="tech-tag">SAS</span>
+                            <span class="tech-tag">SPSS</span>
+                            <span class="tech-tag">Logistic Regression</span>
+                            <span class="tech-tag">Multivariate Analysis</span>
+                            <span class="tech-tag">NVIVO</span>
+                            <span class="tech-tag">Qualitative Coding</span>
+                            <span class="tech-tag">REDCap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Climate and Disease -->
+            <div class="project-showcase">
+                <div class="project-header">
+                    <h3>Climate Sensitivity and Disease Risk Prediction</h3>
+                    <div class="project-meta">
+                        <span>University of Illinois at Urbana-Champaign</span>
+                        <span>•</span>
+                        <span>January 2023 - August 2023</span>
+                        <span>•</span>
+                        <span>Infectious Disease Epidemiologist</span>
+                    </div>
+                </div>
+                
+                <div class="project-body">
+                    <div class="project-overview">
+                        <h4>Global Risk Prediction Tool Development</h4>
+                        <p>
+                            Led comprehensive analysis of climate sensitivity traits associated with storms and pathogens influencing diarrheal and vector-borne diseases. Developed a global risk prediction tool to enhance understanding and prediction of disease incidence in relation to climate factors.
+                        </p>
+                    </div>
+
+                    <div class="project-highlights">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Managed and cleaned extensive datasets exceeding 100,000 entries from global disease surveillance systems</li>
+                            <li>Utilized R Studio to perform multifaceted analyses employing generalized linear models and Poisson regression</li>
+                            <li>Acquired and analyzed global rainfall data to create accurate geographical mappings</li>
+                            <li>Integrated ArcGIS to visualize risk zones and temporal disease trends across regions</li>
+                            <li>Successfully developed groundbreaking global risk prediction tool improving climate-health understanding</li>
+                            <li>Enhanced accuracy of disease incidence predictions through strategic data mapping and statistical analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h5>Technologies & Tools</h5>
+                        <div class="tech-tags">
+                            <span class="tech-tag">RStudio</span>
+                            <span class="tech-tag">ArcGIS</span>
+                            <span class="tech-tag">GLM</span>
+                            <span class="tech-tag">Poisson Regression</span>
+                            <span class="tech-tag">Spatial Analysis</span>
+                            <span class="tech-tag">Predictive Modeling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Hospital Operations -->
+            <div class="project-showcase">
+                <div class="project-header">
+                    <h3>Healthcare Operations & Resource Utilization Analysis</h3>
+                    <div class="project-meta">
+                        <span>Mayo Clinic</span>
+                        <span>•</span>
+                        <span>October - December 2024</span>
+                        <span>•</span>
+                        <span>Remote Healthcare Data Analyst</span>
+                    </div>
+                </div>
+                
+                <div class="project-body">
+                    <div class="project-overview">
+                        <h4>Multi-Project Healthcare Analytics Portfolio</h4>
+                        <p>
+                            Conducted comprehensive evaluations across multiple healthcare service lines focusing on resource utilization, length of stay optimization, and workforce retention. Applied advanced statistical methods to identify operational inefficiencies and develop evidence-based recommendations.
+                        </p>
+                    </div>
+
+                    <div class="project-highlights">
+                        <h4>General Surgery Service Line Resource Utilization</h4>
+                        <ul>
+                            <li>Evaluated multi-year patient-day trends revealing declines and improved operational efficiency</li>
+                            <li>Analyzed resource utilization by diagnostic category identifying seasonal peaks up to 306 patient days</li>
+                            <li>Investigated external factors including socioeconomic conditions and insurance policy impacts</li>
+                            <li>Recommended AI-based LOS management tools and predictive analytics for capacity planning</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-highlights">
+                        <h4>Length of Stay Comparative Analysis</h4>
+                        <ul>
+                            <li>Analyzed >3,000 patient encounters across General Medicine vs. General Surgery service lines</li>
+                            <li>Identified higher mean LOS and greater variance in General Medicine suggesting case complexity</li>
+                            <li>Detected LOS outliers and right-skewed distributions using boxplots and descriptive statistics</li>
+                            <li>Proposed evidence-based interventions for discharge process optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-highlights">
+                        <h4>Nurse Retention Analysis</h4>
+                        <ul>
+                            <li>Analyzed workforce data for 1,676 employees including 822 nurses (49% of workforce)</li>
+                            <li>Identified 53.8% nurse attrition rate with age explaining ~35% of variation</li>
+                            <li>Found distance from home increased attrition by 1.68% per unit (p = 0.0122)</li>
+                            <li>Discovered years in current role explained 65% of attrition variance (R² = 0.65)</li>
+                            <li>Conducted subgroup analysis revealing highest attrition in Neurology (33.3%) and Maternity (24.6%)</li>
+                            <li>Developed interactive dashboards and delivered executive briefing with retention strategies</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-highlights">
+                        <h4>Diabetes Regression Analysis</h4>
+                        <ul>
+                            <li>Conducted regression modeling on 768 diabetes cases testing BMI as predictor of DPF</li>
+                            <li>Cleaned dataset and excluded 39 implausible BMI values ensuring analytic accuracy</li>
+                            <li>Established statistically significant relationship (p < 0.0001) between BMI and DPF</li>
+                            <li>Quantified effect: each unit BMI increase associated with 0.0066-point rise in DPF</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h5>Technologies & Tools</h5>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Tableau</span>
+                            <span class="tech-tag">Statistical Modeling</span>
+                            <span class="tech-tag">Regression Analysis</span>
+                            <span class="tech-tag">Data Visualization</span>
+                            <span class="tech-tag">Descriptive Statistics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Overdose Epidemiology -->
+            <div class="project-showcase">
+                <div class="project-header">
+                    <h3>Drug and Opioid Mortality Epidemiological Analysis</h3>
+                    <div class="project-meta">
+                        <span>Florida Department of Children & Families</span>
+                        <span>•</span>
+                        <span>June 2025</span>
+                        <span>•</span>
+                        <span>Epidemiological Data Analyst</span>
+                    </div>
+                </div>
+                
+                <div class="project-body">
+                    <div class="project-overview">
+                        <h4>Statewide Overdose Mortality Surveillance</h4>
+                        <p>
+                            Conducted comprehensive epidemiological analysis of 4,999 mortality records to assess trends in drug- and opioid-caused deaths statewide. Identified demographic and geographic disparities to inform state overdose prevention policies.
+                        </p>
+                    </div>
+
+                    <div class="project-highlights">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Identified 3,004 drug-related (60.1%) and 2,440 opioid-related (48.8%) fatalities from total records</li>
+                            <li>Cleaned and recoded large toxicology datasets with 30+ drug indicators</li>
+                            <li>Created binary variables distinguishing drug presence ("P") vs. causation ("C"), enhancing analytic precision</li>
+                            <li>Performed stratified analyses by sex, age, and county revealing highest mortality among males aged 25-50</li>
+                            <li>Mapped geographic disparities using GIS—highlighted urban counties (Miami-Dade, Palm Beach, Hillsborough)</li>
+                            <li>Identified fentanyl, cocaine, and ethanol as leading contributors (>65% of occurrences)</li>
+                            <li>Quantified causes: 74.3% accidental deaths, 12.3% suicides informing prevention strategies</li>
+                            <li>Developed interactive visualizations and county-level maps for policymaker audiences</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h5>Technologies & Tools</h5>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Statistical Analysis</span>
+                            <span class="tech-tag">GIS Mapping</span>
+                            <span class="tech-tag">Data Visualization</span>
+                            <span class="tech-tag">Epidemiologic Methods</span>
+                            <span class="tech-tag">Toxicology Data</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualizations Section -->
+    <section id="visualizations">
+        <div class="container">
+            <h2 class="section-title">Data Visualizations & Dashboards</h2>
+            <p class="section-subtitle">Interactive dashboards and analytical visualizations created for healthcare and community health projects</p>
+
+            <div class="dashboard-gallery">
+                <div class="dashboard-item">
+                    <img src="./Demo_Dashboard.png" alt="Demographic Analysis Dashboard">
+                    <div class="dashboard-caption">
+                        <h4>Healthcare Workforce Demographics Dashboard</h4>
+                        <p>Comprehensive demographic analysis dashboard visualizing employee characteristics across age, gender, marital status, education, department, distance from home, business travel, and overtime patterns. This multi-faceted visualization enables stakeholders to identify workforce composition trends and inform HR strategy and retention initiatives.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-item">
+                    <img src="./Nurse_attrition_factors.png" alt="Nurse Attrition Factors">
+                    <div class="dashboard-caption">
+                        <h4>Nurse Attrition Factors Analysis</h4>
+                        <p>Advanced regression and trend analysis examining key predictors of nurse attrition including monthly income vs. salary hikes, tenure in current role, years with manager, last promotion timing, total working years, and years at company. These visualizations revealed that years in current role explained 65% of attrition variance (R² = 0.65), informing targeted retention strategies.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-item">
+                    <img src="./OneRoof_Dashboard.png" alt="One Roof Community Survey Dashboard">
+                    <div class="dashboard-caption">
+                        <h4>One Roof Mishawaka Community Survey Dashboard</h4>
+                        <p>Interactive Tableau dashboard presenting comprehensive demographic data from the 2024 One Roof Mishawaka Survey (N=135 respondents). Visualizes ethnicity distribution, education levels, age demographics, average household size (2.87), and gender breakdown, supporting data-driven community health program planning and resource allocation for United Way of St. Joseph County.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-item">
+                    <img src="./Trend_by_MDC-DRG_dashboard.png" alt="MDC-DRG Trend Analysis">
+                    <div class="dashboard-caption">
+                        <h4>Hospital Resource Utilization by MDC-DRG</h4>
+                        <p>Longitudinal trend analysis dashboard tracking patient volumes across Major Diagnostic Categories (MDC) and Diagnosis-Related Groups (DRG) from 2023-2025. Identifies seasonal patterns, peak utilization periods, and resource allocation needs across digestive system, endocrine/nutritional/metabolic disorders, nervous system, and respiratory system categories for Mayo Clinic operational planning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">Driving data-informed decisions across healthcare, public health, and community organizations</p>
+
+            <div class="experience-list">
+                <div class="experience-item">
+                    <h3>United Way of St. Joseph County</h3>
+                    <div class="experience-role">Manager, Data Analytics & Evaluation</div>
+                    <div class="experience-date">May 2024 - Present</div>
+                    <ul>
+                        <li>Lead data analytics and reporting initiatives assessing community health and socioeconomic disparities</li>
+                        <li>Built Tableau dashboards tracking 10+ KPIs guiding strategic investments in poverty reduction</li>
+                        <li>Designed integrated data systems collecting program participation data across multiple service sites</li>
+                        <li>Developed outcome evaluation frameworks for $350K+ in community grants</li>
+                        <li>Automated reporting increasing efficiency by 50% and improving data transparency</li>
+                        <li>Conducted needs assessments across 5+ zip codes identifying service gaps for low-income populations</li>
+                        <li>Raised $400K+ through fundraising campaigns; secured $50K+ from corporate sponsors</li>
+                        <li>Collaborated with C-suite executives on data-informed strategic planning and budget decisions</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>University of Illinois at Urbana-Champaign</h3>
+                    <div class="experience-role">Health Data Analyst | Laboratory of Emotions & Stress Assessment</div>
+                    <div class="experience-date">February 2023 - October 2024</div>
+                    <ul>
+                        <li>Analyzed 60,000+ perinatal patient records assessing mental health trends pre- and post-COVID-19</li>
+                        <li>Streamlined 10,000+ patient records using R with 20% improvement in screening accuracy</li>
+                        <li>Conducted logistic and multivariate regression analyses evaluating screening disparities</li>
+                        <li>Presented findings at 3 national/international conferences; contributed to 2 peer-reviewed publications</li>
+                        <li>Analyzed 99 women across urban vs. rural hospitals identifying diabetes self-management disparities</li>
+                        <li>Conducted mixed-methods study with 20 postpartum women synthesizing 20+ hours qualitative data</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>University of Illinois at Urbana-Champaign</h3>
+                    <div class="experience-role">Infectious Disease Epidemiologist / Analyst</div>
+                    <div class="experience-date">January 2023 - August 2023</div>
+                    <ul>
+                        <li>Managed 100,000+ global records examining climate sensitivity and infectious disease risk</li>
+                        <li>Built predictive models using GLM and Poisson regression with ArcGIS spatial visualization</li>
+                        <li>Created global climate-health prediction tool informing disease prevention strategies</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>CACTUS Communications</h3>
+                    <div class="experience-role">Associate Project Manager - Life Sciences</div>
+                    <div class="experience-date">March 2021 - July 2022</div>
+                    <ul>
+                        <li>Managed 100+ publication portfolios for Takeda and Novo Nordisk</li>
+                        <li>Oversaw project tracking, client communication, and analytics-driven reporting</li>
+                        <li>Utilized DataVision and iEnvision for project management and performance monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Baxter Pharmaceuticals India Pvt. Ltd.</h3>
+                    <div class="experience-role">Business Analyst - Corporate Quality Assurance</div>
+                    <div class="experience-date">October 2018 - July 2019</div>
+                    <ul>
+                        <li>Improved compliance data accuracy by 20% through dashboard automation</li>
+                        <li>Conducted trend analysis for quality reviews supporting regulatory compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Comprehensive expertise in healthcare analytics, epidemiology, and data science</p>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Statistical Analysis & Modeling</h3>
+                    <ul class="skill-list">
+                        <li>RStudio, SAS, SPSS, STATA, NVIVO</li>
+                        <li>Logistic Regression & GLM</li>
+                        <li>Poisson Regression</li>
+                        <li>Multivariate Analysis</li>
+                        <li>Hypothesis Testing</li>
+                        <li>Predictive Modeling</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Data Visualization & Reporting</h3>
+                    <ul class="skill-list">
+                        <li>Tableau Dashboards</li>
+                        <li>Power BI</li>
+                        <li>ArcGIS Spatial Analysis</li>
+                        <li>Excel Advanced Analytics</li>
+                        <li>Data Storytelling</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Data Management Systems</h3>
+                    <ul class="skill-list">
+                        <li>REDCap Clinical Data</li>
+                        <li>Qualtrics Survey Platform</li>
+                        <li>Airtable & Andar360</li>
+                        <li>Blackbaud (Raiser's Edge, Financial Edge)</li>
+                        <li>SQL Databases</li>
+                        <li>VisionLink</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Research & Epidemiology</h3>
+                    <ul class="skill-list">
+                        <li>Epidemiologic Study Design</li>
+                        <li>Program Evaluation</li>
+                        <li>Population Health Analytics</li>
+                        <li>Health Disparities Research</li>
+                        <li>Qualitative & Quantitative Methods</li>
+                        <li>Mixed-Methods Research</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <ul class="skill-list">
+                        <li>Primavera P6</li>
+                        <li>MS Project</li>
+                        <li>DataVision & iEnvision</li>
+                        <li>Multi-Project Coordination</li>
+                        <li>Budget Planning</li>
+                        <li>Stakeholder Communication</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Research Areas</h3>
+                    <ul class="skill-list">
+                        <li>Public Health & Epidemiology</li>
+                        <li>Maternal-Child Health</li>
+                        <li>Infectious Disease Surveillance</li>
+                        <li>Healthcare Operations</li>
+                        <li>Community Health Assessment</li>
+                        <li>Health Equity Research</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications & Presentations</h2>
+            <p class="section-subtitle">Contributing to academic discourse on maternal health and epidemiology</p>
+
+            <div class="publications-list">
+                <div class="publication-item">
+                    <h4>Determining Depression and Anxiety Screening Shifts Among Perinatal Latinas Amidst COVID-19</h4>
+                    <div class="publication-authors">Lara-Cinisomo S., Bhadola D., et al.</div>
+                    <div class="publication-venue">International Marce Society Conference, 2024</div>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Geographic and Hospital Differences in Maternal Mental Health and Gestational Diabetes Management</h4>
+                    <div class="publication-authors">Lara-Cinisomo S., Loret de Mola R., Flores-Carter, Bhadola D., et al.</div>
+                    <div class="publication-venue">International Marce Society Conference, 2024</div>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Exploring Postpartum Depression and Pain to Develop a Mindfulness-based Intervention</h4>
+                    <div class="publication-authors">Patel A., Bhadola D., et al.</div>
+                    <div class="publication-venue">American Psychological Association (APA) Conference, 2024</div>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Characterizing Student Users of the Food Assistance and Well-Being Program</h4>
+                    <div class="publication-authors">Bhadola D.</div>
+                    <div class="publication-venue">Student Affairs Assessment Conference, 2024</div>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Postpartum Pain and Depression: A Qualitative Study of Mothers' Experiences and Recommendations</h4>
+                    <div class="publication-authors">Lara-Cinisomo S., Patel A., Lopez S., Bhadola D.</div>
+                    <div class="publication-venue">Marce of North America (MONA) Conference, 2023</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Devanshi Bhadola | Healthcare Data Analyst & Epidemiologist</p>
+            <p style="margin-top: 12px; opacity: 0.8;">Transforming healthcare data into actionable insights for public health impact</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
