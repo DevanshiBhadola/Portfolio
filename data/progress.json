@@ -1,6 +1,8 @@
 {
   "logs": [],
-  "wkDone": {},
+  "wkDone": {
+    "1-4_today": true
+  },
   "exNotes": {},
   "benchDone": {},
   "bodyWeight": [],
