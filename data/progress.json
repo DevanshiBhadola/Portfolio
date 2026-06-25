@@ -18,7 +18,7 @@
           {
             "d": "Sun",
             "type": "run",
-            "title": "Back Squat · Easy Run 15 min · Tempo Run",
+            "title": "Back Squat · Easy Run 15 min · Tempo Run +1",
             "detail": "",
             "exs": [
               {
@@ -48,6 +48,16 @@
                 "rest": 75,
                 "cues": "HR 145–155 bpm. Comfortably hard — 1–2 words between breaths.",
                 "timer": 900,
+                "isCardio": true
+              },
+              {
+                "name": "SkiErg",
+                "sets": "3",
+                "reps": "500m",
+                "load": "—",
+                "rest": 75,
+                "cues": "Hip hinge drive. Record each split.",
+                "timer": 90,
                 "isCardio": true
               }
             ]
